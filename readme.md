@@ -1,196 +1,155 @@
-# Jikan - The Unofficial MyAnimelist PHP API
-[![build](https://travis-ci.org/irfan-dahir/jikan.svg?branch=master)](https://travis-ci.org/irfan-dahir/jikan) [![version](https://img.shields.io/badge/ver-0.3.0-blue.svg?style=flat)]() [![status](https://img.shields.io/badge/status-beta-blue.svg?style=flat)]() 
-[![REST API](https://img.shields.io/badge/jikan.me-available-brightgreen.svg?style=flat)](http://jikan.me) [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/irfan-dahir/jikan.svg)](http://isitmaintained.com/project/irfan-dahir/jikan "Average time to resolve an issue") [![Percentage of issues still open](http://isitmaintained.com/badge/open/irfan-dahir/jikan.svg)](http://isitmaintained.com/project/irfan-dahir/jikan "Percentage of issues still open")
+[![Jikan](http://i.imgur.com/ctoJ3Jp.png)](#jikan---unofficial-myanimelistnet-php-api)
 
-## The REST API & Documentation is available at [https://jikan.me](http://jikan.me)
-
-Jikan is an OOP based class written in PHP that scrapes and parses data out of MyAnimeList. It provides you an easy syntax that can fetch Anime, Manga, People, Character details and even user lists. It returns the data in an array and has a built-in method that converts it to JSON.
-
-The raison d'être for Jikan is to provide an easy API for being able to get stuff that the official API of MyAnimeList lacks.
-
-Jikan even has it's own REST API that responds in JSON - [Get Started](http://jikan.me)
-
-This is a Beta version and is in WIP.
+# Jikan - Unofficial MyAnimeList.net PHP API
+[![build](https://travis-ci.org/jikan-me/jikan.svg?branch=master)](https://travis-ci.org/jikan-me/jikan?branch=master) [![build](https://ci.appveyor.com/api/projects/status/github/jikan-me/jikan?branch=master&svg=true)](https://ci.appveyor.com/project/irfan-dahir/jikan) [![stable](https://img.shields.io/packagist/v/jikan-me/jikan.svg?style=flat)](https://packagist.org/packages/jikan-me/jikan) [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/jikan-me/jikan.svg)](http://isitmaintained.com/project/jikan-me/jikan "Average time to resolve an issue") [![Percentage of issues still open](http://isitmaintained.com/badge/open/jikan-me/jikan.svg)](http://isitmaintained.com/project/jikan-me/jikan "Percentage of issues still open") [![stable](https://img.shields.io/badge/PHP-^%207.1-blue.svg?style=flat)]() [![Discord Server](https://img.shields.io/discord/460491088004907029.svg?style=flat&logo=discord)](https://discord.gg/4tvCr36)
 
 
-# Features
-- Anime + Characters/Staff + Episodes
-- Manga + Characters/Staff
+Jikan is a PHP API for [MyAnimeList.net](https://myanimelist.net). It scrapes the website to satisfy the need for an API - which MyAnimeList lacks.
+
+The raison d'être of Jikan is to assist developers easily get the data they need for their apps and projects without having to depend on the lackluster official API, unstable APIs, or sidetracking their projects to develop parsers.
+
+The word _Jikan_ literally translates to _Time_ in Japanese (**時間**). And that's what this API saves you of. ;)
+
+
+**Notice**: Jikan does not support authenticated requests. You can not update your lists.
+
+
+## Getting Started
+1. `composer require jikan-me/jikan`
+2. [Documentation](http://docs.jikan.moe)
+
+:exclamation: Version `~1.0` is no longer maintained, it's required you use `^2.0`.
+
+#### Dependencies
+- [Goutte](https://github.com/FriendsOfPHP/Goutte)
+- PHP 7.1+
+
+## Jikan REST API
+A REST service is available as well.
+
+- **[REST DOCUMENTATION](https://jikan.docs.apiary.io)**
+- **[Apps/Projects using JikanREST](https://jikan.moe/showcase)**
+- **[Host your own instance of Jikan REST](https://github.com/jikan-me/jikan-rest)**
+
+### Wrappers
+- **[.NET]** [Jikan.net](https://github.com/Ervie/jikan.net) by Ervie
+- **[Python]** [JikanPy](https://github.com/AWConant/jikanpy) by Andrew Conant & Abhinav Kasamsetty
+- **[Ruby]** [Jikan.rb](https://github.com/Zerocchi/jikan.rb) by Zerocchi
+- **[JavaScript]** [JikanJS](https://github.com/zuritor/jikanjs) by Zuritor
+- **[Java]** [Jikan4java](https://github.com/Doomsdayrs/Jikan4java) by Doomsdayrs
+- **[PHP]** [jikan-php](https://github.com/janvernieuwe/jikan-jikanPHP) by Jan Vernieuwe
+- **[Node.js]** [jikan-node](https://github.com/xy137/jikan-node) by xy137
+
+[Add your own wrapper here](https://github.com/jikan-me/jikan/edit/master/readme.md)
+
+
+## Features
+- Anime
+    - Main Information
+    - Characters & Staff
+    - Episodes
+    - News
+    - Videos/PV/Episodes
+    - Pictures
+    - Stats
+    - Forum Topics
+    - More Info
+    - Recommendations
+    - Reviews
+    - Recent List Updates By Users
+- Manga
+    - Main Information
+    - Characters
+    - News
+    - Stats
+    - Pictures
+    - Forum Topics
+    - More Info
+    - Recommendations
+    - Reviews
+    - Recent List Updates By Users
 - Character
-- Person
-- User Anime/Manga List
-- Modular scraping method for developers to extend the API
-- JSON formats! ლ( ͡⎚ ͜ʖ ͡⎚ ლ)
+    - Main Information
+    - Pictures
+- People
+    - Main Information
+    - Pictures
+- Search
+    - Anime
+    - Manga
+    - Character
+    - Person
+    - Pagination Support
+    - Advanced Search (Filters)
+- Seasonal Anime (Season + Year)
+- Season List/Archive
+- Anime Scheduling (for current season)
+- Top
+    - Anime
+    - Manga
+    - Characters
+    - People
+    - Sub Types & Pagination Support
+- Genre
+    - Anime
+    - Manga
+- Producers (Anime Listing)
+- Magazines (Manga Listing)
+- User
+    - Profile
+    - Friends
+        - Pagination support
+    - History
+        - All
+        - Anime
+        - Manga
+    - Anime & Manga Lists
+        - Pagination Support
+- Club
+    - Main Information
+    - User List
+    
+[View RoadMap](https://github.com/jikan-me/jikan/projects/4)
 
-## Planned Features
-- Fetch Anime + Manga Reviews, Recommendations, Stats, News, Pictures, etc
-- Search results w/ pagination
-- Command Line Usage
+## Running Tests
+`composer require jikan-me/jikan --dev`
 
-## Examples
-Check the [examples](https://github.com/irfan-dahir/jikan/tree/master/examples) directory
+This will download [Fixtures](https://github.com/jikan-me/jikan-fixtures) as well.
+
+###### PHPUnit
+`php vendor/bin/phpunit`
+
+###### GrumPHP
+PHPCS, PHPLint & PHPUnit
+
+`php vendor/bin/grumphp run`
 
 
 ## Changelog
-### 0.3.0 beta - July 6, 17
-- [Anime/Manga] HTML Tags are now stripped out from Synopsis & Background information
-- [Anime/Manga] Background returns as an empty string if there's nothing to parse
-- [Anime/Manga] Characters & Staff to return only 1 display image instead of the 2 different sizes in one string
-- [Character/Person] Added picture parsing
-- [User list] Bug fixes
-- [REST] Added approproate HTTP header responses
 
-### 0.2.6 beta - June 21, 17
-- `licensors` to `licensor`
-- `authors` to `author`
-- `genres` to `genre`
-- `producers` to `producer`
-- `studios` to `studio`
+### v2.7.0 - Apr 14, 18
+- **[Anime|Manga]** 
+    - `EpisodeListItem` `aired` property to return `DateTimeImmutable` instead of `DateRange`
+    - [Bug Fix] Stats Score refactoring; returns `AnimeStatsScore`/`MangaStatsScore` object instead of array now - [#216](/../../issues/216)
+    - Fix `AnimeListItem`/`MangaListItem` parsing date formats incorrectly
+- **[Helper]** fix `parseDateMDY` returning incorrect date
+- **[Jikan.php]**
+    - fix `PersonSearch`incorrect Request class hinting
+    - add `UserMangaList`
+- **[MalClient.php]**
+    - `getAnimeEpisodes` with no episodes return empty episodes array now instead of BadResponseException (404)
+    - `getPersonSearch` with no results returns empty array now instead of BadResponseException (404)
+    - `getCharacterSearch` with no results returns empty array now instead of BadResponseException (404)
+    - `getCharacter` returns BadResponseException (404) now if invalid ID is provided
+    - Fix guzzle dep injection being overriden in some cases
+- **[User]**
+    - Fix `UserProfileParser`'s `getUsername()` returning the URL instead of the username
+- Added default values to some models
+- Other minor code and bug fixes
 
-### 0.2.5 beta - June 17, 17
-- Fixed `score` and `favorites` not showing up for manga
-- Fixed parsing issue for some `serialization`
-
-### 0.2.4 beta - June 17, 17
-- Fixed anime/manga `type` fetch
-- Fixed parsing issue with some `licensors` names
-
-### 0.2.3 alpha - June 2, 17
-- Serialization will return empty array if there's none
-- Replaced `is_link` check with `is_link2`
-	- `is_link` uses the default php function `filter()` to validate URLS
-	- `filter()` returns false on some correct URLS that have UTF8 characters (which a lot of anime/manga do)
-	- `is_link2` simply checks for `http(s)://` via ReGex
-- Refactored `authors` array response for manga & fixed critical parsing issues
-	- Check response types @ [http://jikan.me/docs#rest-manga](http://jikan.me/docs#rest-manga)
-	- Returns empty array if there's no authors set
-	- `authors` is renamed to `author`
-- Refactors `genres` array response 
-	- Check response types @ [http://jikan.me/docs#rest-manga](http://jikan.me/docs#rest-manga)
-	- `genres` is renamed to `genre` 
-- `background` returns empty string if there's no background available
-
-### 0.2.2 alpha - June 2, 17
-- Fix manga override for `setParentFile`
-
-### 0.2.1 alpha - June 1, 17
-- Added method `setParentFile($type, $value)` and `setChildFile($page, $value)`
-	- This method pre-sets links/file paths to the parent/child methods, if you don't want to pass ID params to them
-	- More info in the docs
-- Added extended method `episodes`
-	- Only works for the parent method `anime`
-	- Recursively makes requests if the episodes are more than 100 to fetch all episodes
-	- More info in the docs
-- Added extended method `characters_staff`
-	- Works for the parent methods; `anime` and `manga`
-	- More info in the docs
-- If premiered is unknown, it'll return an empty string
-- If ranking is N/A, it'll return -1
-- Refactored `related` for manga
-- Fixed bugs of related anime
-- Added `title-english` for anime/manga
-- Added 'status' for manga (e.g completed, publishing, etc)
-- For Mangas, `volumes` and `chapters` will return 'Unknown' if so otherwise it will return integers
-- Following Semantic Versioning
-
-### 0.1.5 alpha - May 26, 17
-- Method **list** renamed to **user_list**
-	- Reason: Issues with PHP 5.6
-- Fixed critical bugs
-
-### 0.1.4.5 alpha - May 21, 17
-- Added user anime/manga list fetch & parsed as JSON
-- A few more stuff can be parsed from the Anime/Manga pages
-	- Background
-	- Opening Themes
-	- Ending Themes
-
-### 0.1.4 alpha - May 16, 17
-- Jikan library is renamed from **mal-uapi.php** to **jikan.php**
-- Namespace changed from **MAL** to **Jikan**
-	```php
-	$jikan = new \Jikan\GET;
-	$jikan->anime(1);
-	$anime = $jikan->data;
-	```
-- Main class is changed from **GET** to **Get**
-- Completed person fetch
-- Added canonical link for Characters in the return data
-- Fixed parsing of related anime bug
-- Here's the data you can fetch from a person
-	- Canonical Link
-	- Given Name
-	- Family Name
-	- Alternative Names
-	- Birthday
-	- Website
-	- Member favorites
-	- More
-	- Voice Acting Roles
-		- The Anime
-			- Name
-			- Link
-			- Image
-		- Character
-			- Name
-			- Link
-			- Role
-			- Image
-	- Anime Staff Positions
-		- The Anime
-			- Name
-			- Link
-			- Image
-			- Role
-	- Published Manga
-		- The Manga
-			- Name
-			- Link
-			- Image
-			- Role
-- Replaced log method by thrown exception
-
-### 0.1.3 alpha - May 15, 17
-- Completed character fetch data
-	- You can now fetch animeography, mangaography, voice actors and member favorites of that character
-	```php
-	$mal = new \MAL\GET;
-	$character = $mal->character(1)->data;
-	```
-
-### 0.1.2 alpha - May 12, 17
-- Added Character fetch, you can now get character data.
-	- Yet to fetch character animeography, mangaography & voice actors
-- Updated resource for synopsis of anime/manga to something more complete and easier to match, the meta og tags
-- Fetching anime data did not scrape related series (forgot to add it there, woops!) where as manga method did
-- Added chaining methods (return $this)
-	- Note that this only works for similar type gets, for example Anime, Manga, Characters
-	- So you can fetch extra stuff such as videos, episodes, reviews, etc from their own respective pages like this:
-	```php
-		$mal = new \MAL\GET;
-		$anime = $mal->anime(1)->videos()->episode()->reviews();
-	```
-	- This will be slower as every method is fetching a completely new page dedicated to that data
-- Simply calling the anime or manga method like this,
-	```php
-		$anime = $mal->anime(1)
-	```
-	will no longer return the data! The data will be saved to its array, which you'll need to use a new method to return it.
-	The reason for this is chained methods to fetch other related data as stated above!
-	```php
-		$anime = $mal->anime(1)->return();
-		//or
-		$anime = $mail->anime(1)->data;
-		//same stuff
-	```
+[Read More](https://github.com/jikan-me/jikan/blob/master/changelog.md)
 
 
-### 0.1.1 alpha - Apr 17, 17
-- Many bug fixes
-- Manga fetching works without any errors now
-- You can now fetch related mangas
-
-### 0.1.0 alpha - Feb 2, 17
-- You're now able to fetch manga details
-- Bug fixes
-
+## DISCLAIMER
+- Jikan is not affiliated with MyAnimeList.net 
+- You are responsible for the usage of this API. Please be respectful towards MyAnimeList's [Terms Of Service](https://myanimelist.net/about/terms_of_use)
